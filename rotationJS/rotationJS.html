@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>rotation </title>
+        <link rel="stylesheet" href="rotationcss.css">
+    </head>
+    <body>
+        <h2>
+            Turn your living room into
+            <div class="mask">
+                <span data-show>a Theater.</span>
+                <span>a gym.</span>
+                <span>a concert hall.</span>
+                <span>a arcade.</span>
+            </div>
+        </h2>
+        <script>
+            setInterval(function() {
+                const show = document.querySelector('span[data-show]')
+                const next = show.nextElementSibling || document.querySelector('span:first-child')
+                const up = document.querySelector('span[data-up]')
+                if(up)
+                {
+                    up.removeAttribute('data-up')
+                }
+                show.removeAttribute('data-show')
+                show.setAttribute('data_up','')
+                next.setAttribute('data-show','')
+            },2000)
+        </script>
+    </body>
+</html>
